@@ -1,0 +1,4 @@
+node_modules/
+
+# Optional: ignore local lock file
+package-lock.json
