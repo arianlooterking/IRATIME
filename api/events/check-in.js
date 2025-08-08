@@ -1,5 +1,5 @@
-import { getPool, initSchema } from '../../_db.js';
-import { clientIP, todayYMD, CONFIG } from '../../_helpers.js';
+import { getPool, initSchema } from '../_db.js';
+import { clientIP, todayYMD, CONFIG } from '../_helpers.js';
 
 export default async function handler(req, res){
   if (req.method !== 'POST') return res.status(405).end();
