@@ -22,7 +22,7 @@ export async function initSchema() {
   CREATE TABLE IF NOT EXISTS events (
     id SERIAL PRIMARY KEY, employee_id INTEGER REFERENCES employees(id) ON DELETE CASCADE, device_id INTEGER REFERENCES devices(id) ON DELETE SET NULL,
     type TEXT CHECK (type IN ('check_in','check_out','break_start','break_end')) NOT NULL,
-    source TEXT CHECK (type IN ('check_in','check_out','break_start','break_end') OR source IN ('auto','manual','admin')) NOT NULL DEFAULT 'manual',
+    source TEXT CHECK (source IN ('auto','manual','admin')) NOT NULL DEFAULT 'manual',
     public_ip TEXT, created_at TIMESTAMPTZ DEFAULT now()
   );
   CREATE TABLE IF NOT EXISTS timesheets (
