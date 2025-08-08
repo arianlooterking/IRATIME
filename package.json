@@ -1,7 +1,12 @@
 {
   "name": "timeguard-vercel",
   "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
   "dependencies": {
+    "express": "^4.18.2",
     "pg": "^8.11.3"
   }
 }
