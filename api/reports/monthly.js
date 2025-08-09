@@ -1,5 +1,6 @@
 import { getPool, initSchema } from '../_db.js';
 export default async function handler(req,res){
+  console.log('Incoming request', req.method, req.url, req.method === 'GET' ? req.query : req.body);
   if (req.method !== 'GET') return res.status(405).end();
   await initSchema();
   const p = getPool();

@@ -2,6 +2,7 @@ import { getPool, initSchema } from '../../_db.js';
 import { clientIP, todayYMD, CONFIG } from '../../_helpers.js';
 
 export default async function handler(req, res){
+  console.log('Incoming request', req.method, req.url, req.body);
   if (req.method !== 'POST') return res.status(405).end();
   await initSchema();
   const p = getPool();

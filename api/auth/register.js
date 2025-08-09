@@ -1,6 +1,7 @@
 import { getPool, initSchema } from '../_db.js';
 
 export default async function handler(req, res){
+  console.log('Incoming request', req.method, req.url, req.body);
   if (req.method !== 'POST') return res.status(405).end();
   await initSchema();
   const { name, phone, platform, device_uuid } = req.body || {};
